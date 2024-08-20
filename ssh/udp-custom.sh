@@ -6,16 +6,16 @@ rm -rf /etc/udp
 fi
 mkdir -p /etc/udp
 
-# change to time GMT+7
-echo "change to time GMT+7"
-ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+# change to time GMT+8
+echo "change to time GMT+8"
+ln -fs /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime
 
 # install udp-custom
 echo downloading udp-custom
-wget -q -O /etc/udp/udp-custom "https://raw.githubusercontent.com/zhets/project/main/ssh/udp-custom-linux-amd64"
+wget -q -O /etc/udp/udp-custom "https://raw.githubusercontent.com/rasta-team/zhets-project/main/ssh/udp-custom-linux-amd64"
 chmod +x /etc/udp/udp-custom
 echo downloading default config
-wget -q -O /etc/udp/config.json "https://raw.githubusercontent.com/zhets/project/main/ssh/config.json"
+wget -q -O /etc/udp/config.json "https://raw.githubusercontent.com/rasta-team/zhets-project/main/ssh/config.json"
 chmod 777 /etc/udp/config.json
 
 cat> /etc/systemd/system/udp-custom.service <<-END
